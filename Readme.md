@@ -18,4 +18,4 @@ CLI-based-To-Do-List:
 
 ## 💡 How to Use?
 1. Clone this repository: 
-   git clone https://github.com/YOUR_GITHUB/Bash-DevOps-Scripts.git
+   git clone https://github.com/Ilyos-creater/Bash-Automation-DevOps
