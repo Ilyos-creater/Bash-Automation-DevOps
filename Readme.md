@@ -7,7 +7,9 @@ It could be the case, that certain scripts exist in different repos in the futur
 
 ## 📌 What's Inside?
 Here are some automation scripts included in this repo:
-(currently getting started)
+
+CloudUploader:
+<a> https://github.com/Ilyos-creater/Bash-Automation-DevOps/tree/main/CloudUploader-over%20CLI </a>
 
 
 ## 💡 How to Use?
