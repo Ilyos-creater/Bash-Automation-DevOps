@@ -1,0 +1,28 @@
+#!/bin/bash
+
+cat1=wendy
+cat2=kitty
+
+if [ $# -eq 1 ]
+then
+	echo "An argument was correctly used as input"
+else
+	echo "An argument is missing"
+	exit 1;
+fi
+
+if [ "$1" = "$cat1" ]
+then
+	echo "Hello $cat1"
+elif  [ "$1" = "$cat2" ]
+then
+	echo "Hello $cat2"
+fi
+
+if [ -n "$2" ]
+then
+	echo "There is a second parameter here"
+else
+	echo "there is not a second one"
+fi
+
