@@ -1,5 +1,6 @@
 #!/bin/bash
 
+
 string1="Hallo"
 string2="Welt"
 
