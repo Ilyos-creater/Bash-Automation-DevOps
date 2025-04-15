@@ -9,4 +9,4 @@ fi
 
 echo "Files in the Directory and Subdirectories:"
 find "$DIR" -type f
-
+find "$DIR" -type d
