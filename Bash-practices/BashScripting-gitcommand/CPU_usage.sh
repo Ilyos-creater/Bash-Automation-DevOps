@@ -15,7 +15,7 @@ fi
 echo "Current CPU Usage: $CPU_USAGE %"
 
 if [ "$(echo "$CPU_USAGE > $Maximum" | bc -l)" -eq 1 ]; then
-    echo "⚠️  Warning: CPU Usage got to high ${Maximum}% should be the limit!"
+    echo " Warning: CPU Usage got to high ${Maximum}% should be the limit"
     echo "$(date): Warning CPU Usage ist at  ${CPU_USAGE}%" >> "$File"
 fi
 
