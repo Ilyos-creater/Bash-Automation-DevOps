@@ -20,13 +20,13 @@ This repo shows my journey learning to **think in Linux** and to build small, co
   Fundamentals: parameters, arrays, functions, I/O, exit codes, traps, etc. Great for reviewing basics.
 
 - Bash-practices  
-  On-the-job snippets & utilities (log rotation, backups, ETL-like tasks, service checks).
+    In my 1 year internship, I had some practices to learn Bash Scripting (log rotation, backups, ETL-like tasks, service checks).
 
 - Projects  
   “Shippable” scripts with README/usage/error handling. Often include config and test data.
 
 - BashLab  
-  Scratchpad for experiments and prototypes; promote stable tools into `Projects/`.
+  Here I use Chatgpt to give me tasks and I gotta solve them on my own, to stay fluid and learn Shell Scripting
 
 ---
 
@@ -47,72 +47,6 @@ This repo shows my journey learning to **think in Linux** and to build small, co
 
 ---
 
-## 🧩 Script Template (shared pattern)
-
-Use this header for predictable behavior & easy automation:
-
-    #!/usr/bin/env bash
-    set -euo pipefail
-    IFS=$'\n\t'
-
-    SCRIPT_NAME="$(basename "$0")"
-
-    usage() {
-      cat <<EOF
-    $SCRIPT_NAME — <one-line description>
-    Usage: $SCRIPT_NAME [options]
-    Options:
-      -h, --help       Show help
-      -v, --verbose    Verbose output
-    EOF
-    }
-
-    log()  { printf '[%s] %s\n' "$(date +'%F %T')" "$*" >&2; }
-    die()  { log "ERROR: $*"; exit 1; }
-
-    VERBOSE=0
-    while [[ $# -gt 0 ]]; do
-      case "$1" in
-        -h|--help) usage; exit 0;;
-        -v|--verbose) VERBOSE=1; shift;;
-        *) die "Unknown argument: $1";;
-      esac
-    done
-
-    main() {
-      (( VERBOSE )) && log "Verbose mode on"
-      # TODO: your logic
-    }
-
-    main "$@"
-
-Why: strict mode + clear UX + meaningful exits ⇒ easier debugging & CI.
-
----
-
-## 🧪 Quality: Lint, Format, Conventions
-
-- ShellCheck (lint):
-
-      # Debian/Ubuntu
-      sudo apt-get update && sudo apt-get install -y shellcheck
-      shellcheck <script>.sh
-
-- shfmt (format):
-
-      # macOS (Homebrew): brew install shfmt
-      # Go: go install mvdan.cc/sh/v3/cmd/shfmt@latest
-      shfmt -w -i 2 -ci .
-
-- Conventions
-  - Shebang: `#!/usr/bin/env bash`
-  - Prefer long options (`--help`, `--file`)
-  - Use `printf` over `echo`
-  - Quote variables `"${var}"`; use arrays for lists
-  - Check exit codes; fail fast with context
-
----
-
 ## 🔧 Common DevOps-y Tasks Covered
 
 - Logs & Monitoring: tail/grep pipelines, rotation helpers, `journalctl` digests  
@@ -120,17 +54,6 @@ Why: strict mode + clear UX + meaningful exits ⇒ easier debugging & CI.
 - Networking: health checks with `curl`, port probes with `ss`, DNS sanity with `dig`  
 - Schedulers: cron-friendly, idempotent scripts  
 - System: `systemd` helpers, disk/memory inspectors, simple installers
-
----
-
-## 📚 How to Navigate / Learn
-
-1. Start in `Bash-Kurs/` – read, run, tweak the basic exercises.  
-2. Study `Bash-practices/` – see how small tools solve real problems.  
-3. Run `Projects/` – more complete tools; read READMEs and extend with flags.  
-4. Experiment in `BashLab/` – prototype; promote stable tools into `Projects/`.
-
-> “Small tools, glued with text, composed like Lego.” — the Unix way
 
 ---
 
