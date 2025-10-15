@@ -11,7 +11,7 @@ This repo shows my journey learning to **think in Linux** and to build small, co
 ├── Bash-Kurs/         # Course work – small projects & exercises from a structured Bash course  
 ├── Bash-practices/    # Practice tasks from my internship (utility-focused scripts)  
 ├── Projects/          # Personal milestone projects (bigger scope, automation & DevOps flavored)  
-├── BashLab/           # Experimental space built together with my Linux/Shell mentor (AI)  
+├── BashLab/           # Study space built together with my Linux/Shell mentor (AI)  
 └── Readme.md
 
 ### What lives where?
@@ -44,25 +44,6 @@ This repo shows my journey learning to **think in Linux** and to build small, co
     ./Projects/<some-script>.sh --help
 
 > Scripts are POSIX-leaning **Bash**. Prefer `bash` (not `sh`) unless noted.
-
----
-
-## 🔧 Common DevOps-y Tasks Covered
-
-- Logs & Monitoring: tail/grep pipelines, rotation helpers, `journalctl` digests  
-- Backups: timestamped archives, retention policies  
-- Networking: health checks with `curl`, port probes with `ss`, DNS sanity with `dig`  
-- Schedulers: cron-friendly, idempotent scripts  
-- System: `systemd` helpers, disk/memory inspectors, simple installers
-
----
-
-## 🧠 Philosophy
-
-- Make state visible: clear logs; expose `--dry-run` for safety.  
-- Design for composition: read from stdin, write to stdout, exit with meaningful codes.  
-- Automate the investigation: scripts that *explain* failures are more valuable than ones that just fail.  
-- Document the contract: every script answers what / why / how / exit codes.
 
 ---
 
